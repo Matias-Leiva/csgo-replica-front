@@ -1,79 +1,72 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# React Native Frontend for Airsoft CS:GO Replica
 
-# Getting Started
+This React Native app serves as the front-end interface for an airsoft adaptation project inspired by the CS:GO game. The app interacts with an ESP8266 NodeMCU server, allowing users to control an LCD, buzzer, LED, and button setup. The app provides a simple interface to send commands and receive feedback from the ESP8266 device.
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+## Features
 
-## Step 1: Start the Metro Server
+- **Connect to ESP8266 Access Point**: Connect to the ESP8266's WiFi network to control the airsoft game elements.
+- **Send Commands**: Use buttons within the app to send commands (e.g., turn LED on/off) to the ESP8266 server.
+- **Receive Feedback**: Display status updates and responses from the ESP8266 on the app's interface.
+- **User-Friendly Interface**: Simple and intuitive design for easy interaction during airsoft games.
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+## Prerequisites
 
-To start Metro, run the following command from the _root_ of your React Native project:
+- **Node.js**: Ensure you have Node.js installed.
+- **React Native CLI**: Install React Native CLI if not already installed.
+- **Android Studio/Xcode**: Set up your development environment for Android or iOS development.
 
-```bash
-# using npm
-npm start
+## Installation
 
-# OR using Yarn
-yarn start
-```
+1. **Clone the repository:**
+    ```bash
+    git clone https://github.com/Matias-Leiva/csgo-replica-front.git
+    cd csgo-replica-front
+    ```
 
-## Step 2: Start your Application
+2. **Install dependencies:**
+    ```bash
+    npm install
+    ```
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+3. **Link native dependencies:**
+    ```bash
+    npx react-native link
+    ```
 
-### For Android
+4. **Configure environment (if necessary)**:
+    - Update any configuration files with your ESP8266 network details.
 
-```bash
-# using npm
-npm run android
+## Running the App
 
-# OR using Yarn
-yarn android
-```
+1. **Start the Metro Bundler:**
+    ```bash
+    npx react-native start
+    ```
 
-### For iOS
+2. **Run the app on Android:**
+    ```bash
+    npx react-native run-android
+    ```
 
-```bash
-# using npm
-npm run ios
+3. **Run the app on iOS:**
+    ```bash
+    npx react-native run-ios
+    ```
 
-# OR using Yarn
-yarn ios
-```
+## Usage
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+1. **Connect to the ESP8266's WiFi network:**
+    - SSID: `ESP8266_AP`
+    - Password: `12345678`
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+2. **Open the app**: Once the app is running on your device, you can use the buttons to send commands to the ESP8266 server.
 
-## Step 3: Modifying your App
+3. **Receive Feedback**: View status updates and responses from the ESP8266 displayed within the app.
 
-Now that you have successfully run the app, let's modify it.
+## Integration with ESP8266 Project
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
+This app is designed to work with the [ESP8266 Airsoft Project](https://github.com/Matias-Leiva/csgo-replica-esp-server). Make sure the ESP8266 server is set up and running before using the app.
 
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
+## License
 
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

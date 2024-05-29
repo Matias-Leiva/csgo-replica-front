@@ -33,48 +33,40 @@ const Home = () => {
   const handleConnect = async () => {
     setMsg('');
     setLoading(true);
-    // try {
-    //   const responseConnect = await connect();
-    //   if (responseConnect.connected === 'true') {
-    //     setConnection(true);
-    //   }
-    // } catch (error: any) {
-    //   setMsg(error?.msg || 'Something Wrong');
-    // } finally {
-    //   setLoading(false);
-    // }
-    setTimeout(() => {
+    try {
+      const responseConnect = await connect();
+      if (responseConnect.connected == 'true') {
+        setConnection(true);
+      }
+    } catch (error: any) {
+      setMsg(error?.msg || 'Something Wrong');
+    } finally {
       setLoading(false);
-      setConnection(true);
-    }, 1500);
+    }
   };
 
   const handleStartGame = async () => {
     setMsg('');
     setLoading(true);
-    // try {
-    //   const responseConnect = await SetTime({
-    //     hoursGame,
-    //     minutesGame,
-    //     secondsGame,
-    //     hourBomb,
-    //     minutesBomb,
-    //     secondsBomb,
-    //   });
-    //   if (responseConnect) {
-    //     console.log(responseConnect);
-    //   }
-    // } catch (error: any) {
-    //   setMsg(error?.msg || 'Something Wrong');
-    //   setConnection(false);
-    // } finally {
-    //   setLoading(false);
-    // }
-    setTimeout(() => {
-      setLoading(false);
-      setMsg('Game had started');
+    try {
+      const responseConnect = await SetTime({
+        hoursGame,
+        minutesGame,
+        secondsGame,
+        hourBomb,
+        minutesBomb,
+        secondsBomb,
+      });
+      if (responseConnect) {
+        setMsg('Game had started');
+        setConnection(false);
+      }
+    } catch (error: any) {
+      setMsg(error?.msg || 'Something Wrong');
       setConnection(false);
-    }, 1500);
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
